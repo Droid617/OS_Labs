@@ -16,10 +16,10 @@ $(OBJECTS): $(SOURCES)
 
 run: ./$(TARGET)
 ifeq ($(arg),"empty")
-	$(info Use 'make run arg=file_name' to add arguments)
+	$(info Use 'make run arg=file_name' to add argument)
 else
 	make
-	./$(TARGET) $(arg)
+	./$(TARGET) -f $(arg)
 endif
 
 clean:
