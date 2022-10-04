@@ -79,7 +79,7 @@ int main(int argc, char** argv){
 	}
 		
 	else{
-		printf("cat: %s: No such file or directoryooo", fileName);
+		printf("cat: %s: No such file or directory", fileName);
 	}
 			
 	
