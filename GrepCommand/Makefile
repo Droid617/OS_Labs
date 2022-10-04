@@ -3,22 +3,17 @@ OBJECTS = main.o GrepHeader.o
 
 CC = gcc
 
-INCLUDES = -I../Grep_Lab2
-CFLAGS = -g -Wall $(INCLUDES)
-LDFLAGS += $(INCLUDES)
-
 .PHONY: clean
 
-$(TARGET): $(OBJECTS) ../Grep_Lab2/GrepHeader.h
-	$(CC) main.o GrepHeader.o $(LDFLAGS) -o $@
+$(TARGET): $(OBJECTS) ./GrepHeader.h
+	$(CC) $(OBJECTS) -o $@
 
 main.o: main.c
-	$(CC) $(CFLAGS) -c main.c
+	$(CC) -c main.c
 	
 GrepHeader.o: GrepHeader.c
-	$(CC) $(CFLAGS) -c GrepHeader.c
+	$(CC) -c GrepHeader.c
 
 clean:
 	rm -f $(OBJECTS)
 	rm -f $(TARGET)
-
