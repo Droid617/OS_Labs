@@ -36,13 +36,13 @@ int main(int argc, char** argv)
 		int exitCode;
 		int exitError;
 		
-		struct sigaction newAction;//setting sigterm by sigaction
+		struct sigaction newAction;//setting sigterm handler by sigaction
 		newAction.sa_handler = SigTermHandler;
 		sigemptyset(&newAction.sa_mask);
 		newAction.sa_flags = 0;
 		sigaction(SIGTERM, &newAction, NULL);
 		
-		signal(SIGINT, SigIntHandler);//setting sigint by signal
+		signal(SIGINT, SigIntHandler);//setting sigint handler by signal
 		
 		switch(Pid = fork())
 		{
