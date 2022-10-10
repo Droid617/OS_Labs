@@ -70,7 +70,7 @@ int main(int argc, char** argv)
 					printf("PARENT: My PID is %d\n", getpid());
 					printf("PARENT: My child's PID is %d\n", Pid);
 					printf("PARENT: Waiting...\n");
-					wait(NULL);
+					wait(&exitCode);
 					
 					printf("PARENT: Real child's exit code is %d\n", WEXITSTATUS(exitCode));
 					printf("PARENT: Exit\n");
