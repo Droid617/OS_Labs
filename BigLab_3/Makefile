@@ -1,6 +1,6 @@
 CC = gcc
 
-.PHONY: clean
+.PHONY: all clean
 
 all:
         $(CC) firstProg.c -o first
