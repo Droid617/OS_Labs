@@ -1,19 +1,10 @@
 CC = gcc
 
-.PHONY: clean
+.PHONY: all clean
 
-one: progOne.o
-	$(CC) $< -o $@
-
-progOne.o: progOne.c
-	$(CC) -c $< -o $@
-
-two: progTwo.o
-	$(CC) $< -o $@
-
-progTwo.o: progTwo.c
-	$(CC) -c $< -o $@
+all:
+        $(CC) progOne.c -o one
+        $(CC) progTwo.c -o two
 
 clean:
-	rm -f progOne.o progTwo.o
-	rm -f one two
+        rm -f one two
